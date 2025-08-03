@@ -306,6 +306,232 @@
             color: #00BFFF;
         }
 
+        .coordinate-systems {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .coordinate-systems h3 {
+            color: #00BFFF;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #B0E0E6;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .coordinate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .coordinate-card {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coordinate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2);
+            border-color: rgba(0, 191, 255, 0.5);
+        }
+
+        .coordinate-card h4 {
+            color: #00BFFF;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coordinate-card p {
+            color: #B0E0E6;
+            margin-bottom: 1rem;
+        }
+
+        .math-formula {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #FFD700;
+            text-align: center;
+            margin: 1rem 0;
+            border-left: 3px solid #00BFFF;
+        }
+
+        .coordinate-details {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 191, 255, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid #00BFFF;
+        }
+
+        .coordinate-details.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        .coordinate-details p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .coordinate-details strong {
+            color: #00BFFF;
+        }
+
+        .interactive-calculator {
+            background: rgba(0, 191, 255, 0.08);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .interactive-calculator h4 {
+            color: #00BFFF;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            color: #B0E0E6;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .input-group input, .input-group select {
+            padding: 0.8rem;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #00BFFF;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .position-output {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .position-coord {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        .position-coord strong {
+            color: #00BFFF;
+        }
+
+        .position-coord span {
+            color: #FFD700;
+            font-family: 'Courier New', monospace;
+        }
+
+        .mathematical-insights {
+            background: rgba(0, 191, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .mathematical-insights h4 {
+            color: #00BFFF;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .insight-item {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #00BFFF;
+        }
+
+        .insight-item strong {
+            color: #00BFFF;
+            font-size: 1.1rem;
+        }
+
+        .insight-item .formula {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #FFD700;
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .insight-item p {
+            color: #B0E0E6;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0.5rem 0 0 0;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 200px;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+
         .cta-section {
             text-align: center;
             margin: 4rem 0;
@@ -510,6 +736,119 @@
             </div>
         </section>
 
+        <section class="coordinate-systems">
+            <h3>Mathematical Perspectives: Viewing 3I/ATLAS Through Different Coordinate Systems</h3>
+            <p class="intro-text">
+                Every astronomical observation depends on the coordinate system we choose. Let's explore how 3I/ATLAS appears 
+                from different mathematical perspectives and reference frames.
+            </p>
+            
+            <div class="coordinate-grid">
+                <div class="coordinate-card" onclick="showCoordinateSystem('heliocentric')">
+                    <h4>🌞 Heliocentric Coordinates</h4>
+                    <p>Sun-centered perspective</p>
+                    <div class="math-formula">r = a(1-e²)/(1+e cos θ)</div>
+                    <div class="coordinate-details" id="heliocentric-details">
+                        <p><strong>Origin:</strong> Center of the Sun</p>
+                        <p><strong>Perspective:</strong> 3I/ATLAS follows a hyperbolic trajectory (e > 1)</p>
+                        <p><strong>Perihelion:</strong> ~11 AU from Sun (October 30, 2025)</p>
+                        <p><strong>Eccentricity:</strong> e ≈ 1.03 (hyperbolic orbit)</p>
+                    </div>
+                </div>
+                
+                <div class="coordinate-card" onclick="showCoordinateSystem('galactic')">
+                    <h4>🌌 Galactic Coordinates</h4>
+                    <p>Galaxy-centered perspective</p>
+                    <div class="math-formula">l = arctan(y/x), b = arcsin(z/r)</div>
+                    <div class="coordinate-details" id="galactic-details">
+                        <p><strong>Origin:</strong> Galactic center</p>
+                        <p><strong>Perspective:</strong> 3I/ATLAS as a traveler between star systems</p>
+                        <p><strong>Galactic Motion:</strong> ~220 km/s orbital velocity around galaxy</p>
+                        <p><strong>Interstellar Speed:</strong> ~137,000 mph relative to Sun</p>
+                    </div>
+                </div>
+                
+                <div class="coordinate-card" onclick="showCoordinateSystem('barycentric')">
+                    <h4>⚖️ Barycentric Coordinates</h4>
+                    <p>Solar system center-of-mass perspective</p>
+                    <div class="math-formula">F = GMm/r² (gravitational influence)</div>
+                    <div class="coordinate-details" id="barycentric-details">
+                        <p><strong>Origin:</strong> Solar system barycenter</p>
+                        <p><strong>Perspective:</strong> Accounting for all planetary masses</p>
+                        <p><strong>Jupiter Effect:</strong> Largest gravitational perturbation</p>
+                        <p><strong>Path Deviation:</strong> Minimal due to high velocity</p>
+                    </div>
+                </div>
+                
+                <div class="coordinate-card" onclick="showCoordinateSystem('relativistic')">
+                    <h4>⚡ Relativistic Perspective</h4>
+                    <p>Einstein's spacetime curvature</p>
+                    <div class="math-formula">ds² = c²dt² - dx² - dy² - dz²</div>
+                    <div class="coordinate-details" id="relativistic-details">
+                        <p><strong>Time Dilation:</strong> Negligible at 0.00046c</p>
+                        <p><strong>Spacetime Curvature:</strong> Follows geodesics in curved spacetime</p>
+                        <p><strong>Frame Dragging:</strong> Minimal effect from Sun's rotation</p>
+                        <p><strong>Light Deflection:</strong> General relativity bends its apparent position</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-calculator">
+                <h4>🧮 Interactive Coordinate Converter</h4>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>Time from Perihelion (days):</label>
+                        <input type="number" id="time-input" value="0" min="-365" max="365" onchange="updatePosition()">
+                    </div>
+                    <div class="input-group">
+                        <label>Reference Frame:</label>
+                        <select id="frame-select" onchange="updatePosition()">
+                            <option value="heliocentric">Heliocentric</option>
+                            <option value="geocentric">Geocentric</option>
+                            <option value="galactic">Galactic</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="position-output" id="position-display">
+                    <div class="position-coord">
+                        <strong>Position:</strong> <span id="position-values">Calculating...</span>
+                    </div>
+                    <div class="position-coord">
+                        <strong>Velocity:</strong> <span id="velocity-values">Calculating...</span>
+                    </div>
+                    <div class="position-coord">
+                        <strong>Distance from Sun:</strong> <span id="distance-values">Calculating...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mathematical-insights">
+                <h4>📐 Mathematical Insights</h4>
+                <div class="insight-grid">
+                    <div class="insight-item">
+                        <strong>Hyperbolic Excess Velocity:</strong>
+                        <div class="formula">v∞ = √(μ/|a|) = √(GM☉/|a|)</div>
+                        <p>The velocity 3I/ATLAS would have at infinite distance from the Sun</p>
+                    </div>
+                    <div class="insight-item">
+                        <strong>Orbital Energy:</strong>
+                        <div class="formula">E = -μ/(2a) < 0 (bound) or > 0 (unbound)</div>
+                        <p>3I/ATLAS has positive energy, confirming it's unbound to our solar system</p>
+                    </div>
+                    <div class="insight-item">
+                        <strong>Angular Momentum:</strong>
+                        <div class="formula">h = r × v = √(μp)</div>
+                        <p>Conserved quantity that determines the orbital plane orientation</p>
+                    </div>
+                    <div class="insight-item">
+                        <strong>Time of Flight:</strong>
+                        <div class="formula">t = (M - e sinh M)/n</div>
+                        <p>Kepler's equation modified for hyperbolic orbits (M = hyperbolic anomaly)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <h3>Thank You for Visiting!</h3>
             <p>Your brief passage through our solar system is a gift to humanity. Safe travels, magnificent visitor!</p>
@@ -551,6 +890,99 @@
             }
         }
 
+        // Show coordinate system details
+        function showCoordinateSystem(system) {
+            // Hide all coordinate details
+            const allDetails = document.querySelectorAll('.coordinate-details');
+            allDetails.forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Show selected coordinate system details
+            const targetDetail = document.getElementById(system + '-details');
+            if (targetDetail) {
+                targetDetail.classList.add('active');
+            }
+            
+            // Add visual feedback
+            const allCards = document.querySelectorAll('.coordinate-card');
+            allCards.forEach(card => {
+                card.style.transform = '';
+                card.style.borderColor = 'rgba(0, 191, 255, 0.3)';
+            });
+            
+            event.currentTarget.style.transform = 'translateY(-5px)';
+            event.currentTarget.style.borderColor = 'rgba(0, 191, 255, 0.8)';
+        }
+
+        // Update position calculations for interactive calculator
+        function updatePosition() {
+            const timeInput = document.getElementById('time-input');
+            const frameSelect = document.getElementById('frame-select');
+            const positionDisplay = document.getElementById('position-values');
+            const velocityDisplay = document.getElementById('velocity-values');
+            const distanceDisplay = document.getElementById('distance-values');
+            
+            const t = parseFloat(timeInput.value); // days from perihelion
+            const frame = frameSelect.value;
+            
+            // Orbital parameters for 3I/ATLAS (approximate)
+            const a = -11.0; // semi-major axis (AU, negative for hyperbolic)
+            const e = 1.03; // eccentricity
+            const perihelion = 11.0; // AU
+            const mu = 1.327e20; // Standard gravitational parameter for Sun (m³/s²)
+            const au = 1.496e11; // AU in meters
+            
+            // Calculate mean motion for hyperbolic orbit
+            const n = Math.sqrt(mu / Math.abs(a * au)**3); // rad/s
+            const M = n * t * 86400; // hyperbolic mean anomaly (rad)
+            
+            // Solve for hyperbolic eccentric anomaly (simplified)
+            let H = Math.asinh(M / e); // initial guess for hyperbolic eccentric anomaly
+            for (let i = 0; i < 5; i++) {
+                H = Math.asinh((M + e * Math.sinh(H)) / e);
+            }
+            
+            // Calculate true anomaly and distance
+            const nu = 2 * Math.atan(Math.sqrt((e + 1)/(e - 1)) * Math.tanh(H/2)); // true anomaly
+            const r_au = a * (e * Math.cosh(H) - 1); // distance from Sun (AU)
+            const r_abs = Math.abs(r_au);
+            
+            // Calculate velocity
+            const v = Math.sqrt(mu * (2/(r_abs * au) - 1/(Math.abs(a) * au))); // velocity (m/s)
+            const velocity_kmh = v * 3.6 / 1000; // km/h
+            
+            // Generate position based on frame
+            let positionText, velocityText, distanceText;
+            
+            switch(frame) {
+                case 'heliocentric':
+                    positionText = `r = ${r_abs.toFixed(2)} AU, ν = ${(nu * 180 / Math.PI).toFixed(1)}°`;
+                    velocityText = `${velocity_kmh.toFixed(0)} km/h (${(velocity_kmh / 3600).toFixed(1)} km/s)`;
+                    distanceText = `${r_abs.toFixed(2)} AU (${(r_abs * 149.6).toFixed(1)} million km)`;
+                    break;
+                case 'geocentric':
+                    // Simplified Earth position calculation
+                    const earthAngle = (t + 100) * 2 * Math.PI / 365.25; // Earth's position
+                    const earthDistance = Math.sqrt(r_abs * r_abs + 1 - 2 * r_abs * Math.cos(nu - earthAngle));
+                    positionText = `Distance from Earth: ${earthDistance.toFixed(2)} AU`;
+                    velocityText = `${velocity_kmh.toFixed(0)} km/h relative to Sun`;
+                    distanceText = `${earthDistance.toFixed(2)} AU from Earth`;
+                    break;
+                case 'galactic':
+                    const galLon = 280 + (t * 0.1); // approximate galactic longitude
+                    const galLat = 15 + (t * 0.05); // approximate galactic latitude
+                    positionText = `l = ${galLon.toFixed(1)}°, b = ${galLat.toFixed(1)}°`;
+                    velocityText = `${velocity_kmh.toFixed(0)} km/h + 220 km/s galactic motion`;
+                    distanceText = `${r_abs.toFixed(2)} AU from galactic plane`;
+                    break;
+            }
+            
+            positionDisplay.textContent = positionText;
+            velocityDisplay.textContent = velocityText;
+            distanceDisplay.textContent = distanceText;
+        }
+
         // Show thank you message
         function showThankYou() {
             const messages = [
@@ -579,6 +1011,7 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             createStarfield();
+            updatePosition(); // Initialize coordinate calculator
             
             // Smooth scrolling for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
