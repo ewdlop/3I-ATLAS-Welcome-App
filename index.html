@@ -331,7 +331,7 @@
 
         .coordinate-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
@@ -740,7 +740,9 @@
             <h3>Mathematical Perspectives: Viewing 3I/ATLAS Through Different Coordinate Systems</h3>
             <p class="intro-text">
                 Every astronomical observation depends on the coordinate system we choose. Let's explore how 3I/ATLAS appears 
-                from different mathematical perspectives and reference frames.
+                from different mathematical perspectives and reference frames, ranging from classical mechanics to advanced 
+                general relativity. The Kruskal–Szekeres coordinates provide the most natural description of spacetime geometry, 
+                revealing the true causal structure without coordinate singularities.
             </p>
             
             <div class="coordinate-grid">
@@ -780,15 +782,29 @@
                     </div>
                 </div>
                 
+                <div class="coordinate-card" onclick="showCoordinateSystem('kruskal-szekeres')">
+                    <h4>🕳️ Kruskal–Szekeres Coordinates</h4>
+                    <p>Maximal spacetime extension</p>
+                    <div class="math-formula">ds² = (32G³M³/r)e^(-r/2GM)(dU dV)</div>
+                    <div class="coordinate-details" id="kruskal-szekeres-details">
+                        <p><strong>Origin:</strong> Spacetime event horizon</p>
+                        <p><strong>Perspective:</strong> Global spacetime geometry without coordinate singularities</p>
+                        <p><strong>Natural Framework:</strong> Reveals true causal structure of curved spacetime</p>
+                        <p><strong>3I/ATLAS Motion:</strong> Geodesic through extended Schwarzschild geometry</p>
+                        <p><strong>Advantage:</strong> Covers entire maximal spacetime manifold</p>
+                    </div>
+                </div>
+                
                 <div class="coordinate-card" onclick="showCoordinateSystem('relativistic')">
-                    <h4>⚡ Relativistic Perspective</h4>
-                    <p>Einstein's spacetime curvature</p>
-                    <div class="math-formula">ds² = c²dt² - dx² - dy² - dz²</div>
+                    <h4>⚡ Schwarzschild Coordinates</h4>
+                    <p>Classical Einstein spacetime</p>
+                    <div class="math-formula">ds² = (1-2GM/rc²)c²dt² - dr²/(1-2GM/rc²)</div>
                     <div class="coordinate-details" id="relativistic-details">
                         <p><strong>Time Dilation:</strong> Negligible at 0.00046c</p>
                         <p><strong>Spacetime Curvature:</strong> Follows geodesics in curved spacetime</p>
                         <p><strong>Frame Dragging:</strong> Minimal effect from Sun's rotation</p>
                         <p><strong>Light Deflection:</strong> General relativity bends its apparent position</p>
+                        <p><strong>Limitation:</strong> Coordinate singularity at Schwarzschild radius</p>
                     </div>
                 </div>
             </div>
@@ -806,6 +822,7 @@
                             <option value="heliocentric">Heliocentric</option>
                             <option value="geocentric">Geocentric</option>
                             <option value="galactic">Galactic</option>
+                            <option value="kruskal-szekeres">Kruskal–Szekeres</option>
                         </select>
                     </div>
                 </div>
@@ -836,9 +853,19 @@
                         <p>3I/ATLAS has positive energy, confirming it's unbound to our solar system</p>
                     </div>
                     <div class="insight-item">
+                        <strong>Kruskal-Szekeres Advantage:</strong>
+                        <div class="formula">ds² = (32G³M³/r)e^(-r/2GM)(dU dV)</div>
+                        <p>Provides a global, singularity-free view of spacetime geometry</p>
+                    </div>
+                    <div class="insight-item">
                         <strong>Angular Momentum:</strong>
                         <div class="formula">h = r × v = √(μp)</div>
                         <p>Conserved quantity that determines the orbital plane orientation</p>
+                    </div>
+                    <div class="insight-item">
+                        <strong>Spacetime Geodesic:</strong>
+                        <div class="formula">d²x^μ/dτ² + Γ^μ_αβ (dx^α/dτ)(dx^β/dτ) = 0</div>
+                        <p>3I/ATLAS follows the natural geometry of curved spacetime</p>
                     </div>
                     <div class="insight-item">
                         <strong>Time of Flight:</strong>
@@ -975,6 +1002,38 @@
                     positionText = `l = ${galLon.toFixed(1)}°, b = ${galLat.toFixed(1)}°`;
                     velocityText = `${velocity_kmh.toFixed(0)} km/h + 220 km/s galactic motion`;
                     distanceText = `${r_abs.toFixed(2)} AU from galactic plane`;
+                    break;
+                case 'kruskal-szekeres':
+                    // Kruskal-Szekeres coordinates calculation
+                    const c = 299792458; // speed of light (m/s)
+                    const G = 6.67430e-11; // gravitational constant (m³/kg·s²)
+                    const M_sun = 1.989e30; // solar mass (kg)
+                    const rs = 2 * G * M_sun / (c * c); // Schwarzschild radius (m)
+                    const r_m = r_abs * au; // position in meters
+                    
+                    // Dimensionless coordinates for Kruskal-Szekeres
+                    const rho = r_m / rs; // r/rs (should be >> 1 for weak field)
+                    
+                    // Simplified Kruskal-Szekeres coordinates for weak field (r >> rs)
+                    // Using proper dimensionless time coordinate
+                    const t_coord = t * 86400; // time in seconds
+                    const tau_dimensionless = t_coord / (rs / c); // proper time coordinate
+                    
+                    // For weak field approximation (r >> rs)
+                    if (rho > 10) { // well outside event horizon
+                        const sqrt_term = Math.sqrt(rho / 4); // simplified for weak field
+                        const U_coord = sqrt_term * (1 + tau_dimensionless / (2 * rho));
+                        const V_coord = sqrt_term * (tau_dimensionless / (2 * rho));
+                        
+                        positionText = `U = ${U_coord.toFixed(6)}, V = ${V_coord.toFixed(6)}`;
+                        velocityText = `Geodesic motion in curved spacetime`;
+                        distanceText = `ρ = r/rs = ${rho.toExponential(2)} (weak field)`;
+                    } else {
+                        // For distances comparable to rs
+                        positionText = `U ≈ 0, V ≈ 0 (near horizon)`;
+                        velocityText = `Geodesic motion in curved spacetime`;
+                        distanceText = `ρ = r/rs = ${rho.toFixed(3)} (strong field)`;
+                    }
                     break;
             }
             
